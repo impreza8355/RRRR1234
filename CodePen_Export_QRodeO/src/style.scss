@@ -1,0 +1,413 @@
+$top_bgc:rgb(153, 255, 153);
+$top_color: #ff9900;
+$color0:	rgb(255, 102, 102);
+$color1: 	rgb(255, 179, 102);
+$color2: 	rgb(255, 255, 102);
+$color3: 	rgb(102, 255, 102);
+$color10: rgb(102, 255, 217);
+$color4: 	rgb(102, 255, 255);
+$color5: 	rgb(102, 102, 255);
+$color6:  rgb(217, 102, 255);
+$color7:	rgb(255, 102, 179);
+$color8:  rgb(255, 102, 140);
+$color9:  rgb(255, 102, 102);
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans+TC&display=swap');
+
+html, body{
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+body{
+  position:relative;
+  background-color: $top_bgc;
+  box-sizing: border-box;
+  border-top: solid 0px $top_bgc;
+  border-bottom:solid 0px $top_bgc;
+  overflow: hidden;
+}
+
+.screen{
+  width: 100%;
+  height: 100%;
+  left:100%;
+}
+.namecard{
+  position: fixed;
+  width: 300px;
+  height: 200px;
+  left:5%;
+  top:5%;
+  padding: 0px 20px 30px 20px;
+  overflow: hidden;
+  background-color:#8cff66;
+  color: #ff9900;
+  border: solid 1px rgba(0, 0, 0, 0.15);
+  box-shadow: 60px 40px 15px -15px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+  font-family: 微軟正黑體;
+  transition: 0.5s;
+  animation:namecard 5s infinite;
+  hr{
+    border-color: #fff;
+    margin-top: -15px;
+    margin-bottom: 20px;
+  }
+  h2{
+    font-size: 25px;
+  }
+  span{
+    font-size: 18px;
+  }
+  h5{
+    font-size:16px;
+    font-wgight: 400;
+  }
+}
+
+.namecard:hover{
+  transform:translate(-50px,-50px);
+  box-shadow: -20px -25px 15px -15pxrgba(0,0,0,0.5);
+  
+}
+
+.allbub{
+  width: 100%;
+  height: 100%;
+  border-radius: 0px;
+  z-index: -3;
+  position: absolute;
+  left: 0;
+  top: 0;
+  background-color: #333;
+    @keyframes falling {
+    0%,100% {
+          opacity: 0;
+        }
+    70% {
+           opacity: 1;
+        }
+    0% {
+          transform: translate(100%, 1500px);
+        }
+    100% {
+              transform: translate(100px, 100%);
+         }
+    }
+    [class*='bub']{
+      background-color: #fff;
+       width: 20px;
+      height: 20px;
+      border-radius: 15px;
+      animation: falling 1s infinite;
+      }
+
+      @for $i from 1 through 20{
+        .bub#{$i} {
+          $posX: random()*100%;
+           $posY: random()*-100%+90%;
+           position: absolute;
+           left: $posX;
+           top: $posY;
+           animation-delay:$i*-0.1s;
+        }
+
+     }
+}
+
+
+@keyframes back{
+  0%{
+    background-color:$color0;
+  }
+  10%{
+    background-color:$color1;
+  }
+  20%{
+    background-color:$color2;
+  }
+  30%{
+    background-color:$color3;
+  }
+  40%{
+    background-color:$color10;
+  }
+  50%{
+    background-color:$color4;
+  }
+  60%{
+    background-color:$color5;
+  }
+  70%{
+    background-color:$color6;
+  }
+  80%{
+    background-color:$color7;
+  }
+  90%{
+    background-color:$color8;
+  }
+  100%{
+    background-color:$color9;
+  }
+}
+.allbub {
+  animation: back 10s infinite;
+}
+
+.Top{
+  animation-name:title;
+  animation-duration: 5s;
+}
+a.buttons{
+color:#ff9900;
+font-family: 微軟正黑體;
+}
+@keyframes namecard{
+    0%{
+    background-color:$color0;
+  }
+  10%{
+    background-color:$color1;
+  }
+  20%{
+    background-color:$color2;
+  }
+  30%{
+    background-color:$color3;
+  }
+  40%{
+    background-color:$color10;
+  }
+  50%{
+    background-color:$color4;
+  }
+  60%{
+    background-color:$color5;
+  }
+  70%{
+    background-color:$color6;
+  }
+  80%{
+    background-color:$color7;
+  }
+  90%{
+    background-color:$color8;
+  }
+  100%{
+    background-color:$color9;
+  }
+}
+body{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  height:800px;
+  margin:20;
+  padding:0;
+}
+  .face{
+  background:white;
+  position:relative;
+    left:60px;
+  width:500px;
+  height:300px;
+  border-radius:50%;
+  top:200px;
+}
+.ear{
+  background:white;
+  position:relative;
+  left:50px;
+  width: 100px;
+  height: 300px;
+    border-radius:50%;
+  top:-500px;
+  transform:skewX(20deg);
+}
+.ear1{
+  background:white;
+  position:relative;
+  left:300px;
+  width: 100px;
+  height: 300px;
+    border-radius:50%;
+  top:-200px;
+  transform:skewX(-20deg);
+}
+.nose{
+  position:relative;
+background:#000;
+  width:25px;
+  height:20px;
+  border-radius:50%;
+  left:235px;
+  top:-470px;
+}
+.eye{
+  position:relative;
+background:#000;
+  width:30px;
+  height:30px;
+  top:-575px;
+  right:-335px;
+  border-radius:50%;
+  
+}
+.eye1{
+  position:relative;
+background:#000;
+  width:30px;
+  height:30px;
+  top:-545px;
+  right:-135px;
+  border-radius:50%;
+}
+.mouth2{
+position:relative;
+background:	#000;
+  width:110px;
+  height:55px;
+  border-radius:50%;
+  top:-590px;
+  z-index:1;
+  left:195px;
+}
+.mouth{
+position:relative;
+background:	#FF0000;
+  width:100px;
+  height:50px;
+  border-radius:50%;
+  top:-460px;
+  left:200px;
+  z-index:2;
+}
+.mouth1{
+position:relative;
+background:	#000;
+  width:5px;
+  height:77px;
+  border-radius:25%;
+  top:-590px;
+  left:245px;
+}
+.circle{
+  position:relative;
+background:#FFB6C1;
+  width:80px;
+  height:50px;
+  top:-700px;
+  right:-50px;
+  border-radius:50%;
+}
+.circle2{
+  position:relative;
+background:#FFB6C1;
+  width:80px;
+  height:50px;
+  top:-750px;
+  left:370px;
+  border-radius:50%;
+}
+.list{
+  position:relative;
+background:#FF0000;
+  width:5px;
+  height:20px;
+  top:-785px;
+  left:395px;
+  border-radius:20%;
+  transform:skewX(-20deg);
+}
+.list1{
+  position:relative;
+background:#FF0000;
+  width:5px;
+  height:20px;
+  top:-805px;
+  left:420px;
+  border-radius:20%;
+  transform:skewX(-20deg);
+}
+.list2{
+  position:relative;
+background:#FF0000;
+  width:5px;
+  height:20px;
+  top:-825px;
+  right:-75px;
+  border-radius:20%;
+  transform:skewX(-20deg);
+}
+.list3{
+  position:relative;
+background:#FF0000;
+  width:5px;
+  height:20px;
+  top:-845px;
+  right:-100px;
+  border-radius:20%;
+  transform:skewX(-20deg);
+}
+.tooth{
+  position:relative;
+background:white;
+  width:15px;
+  height:15px;
+  top:-822px;
+  left:242px;
+  border-radius:0%;
+  z-index:3;
+}
+.heart{
+  width: 60px;
+  height: 60px;
+  background-color: #FF0000;
+  position: relative;
+  animation:beat 0.5s infinite ease-in;
+  top:-1020px;
+  right:-220px;
+}
+.heart:before, .heart:after{
+  content:"";
+  position: fixed;
+  width: 60px; height: 60px;
+  background-color: #FF0000;
+  border-radius: 50%;
+}
+.heart:before{
+  left: 30px;
+}
+
+.heart:after{
+  top: -30px;
+}
+
+@keyframes beat{
+  0%{
+    transform:rotate(-45deg);
+  }
+  
+  40%{
+    transform:rotate(-45deg);
+  }
+  
+  55%{
+    transform:rotate(-30deg);
+  }
+  
+  70%{
+    transform:rotate(-45deg);
+  }
+  
+  85%{
+    transform:rotate(-60deg);
+  }
+  
+  100%{
+    transform: rotate(-45deg);
+  }
+}
